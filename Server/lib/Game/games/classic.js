@@ -24,7 +24,7 @@ var DIC;
 const ROBOT_START_DELAY = [ 1200, 800, 400, 200, 0 ];
 const ROBOT_TYPE_COEF = [ 1250, 750, 500, 250, 0 ];
 const ROBOT_THINK_COEF = [ 4, 2, 1, 0, 0 ];
-const ROBOT_HIT_LIMIT = [ 8, 4, 2, 1, 0 ];
+const ROBOT_HIT_LIMIT = [ 0, 0, 0, 0, 0 ];
 const ROBOT_LENGTH_LIMIT = [ 3, 4, 9, 99, 99 ];
 const RIEUL_TO_NIEUN = [4449, 4450, 4457, 4460, 4462, 4467];
 const RIEUL_TO_IEUNG = [4451, 4455, 4456, 4461, 4466, 4469];

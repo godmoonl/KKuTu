@@ -1,4 +1,4 @@
-const config = require('../../sub/auth.json');
+﻿const config = require('../../sub/auth.json');
 
 module.exports.config = {
     strategy: require('passport-kakao').Strategy,

@@ -2,8 +2,8 @@ const config = require('../../sub/auth.json');
 
 module.exports.config = {
     strategy: require('passport-google-oauth2').Strategy,
-    color: '#FFFFFF',
-    fontColor: '#000000',
+    color: '#7289DA',
+    fontColor: '#FFFFFF',
     vendor: 'google',
     displayName: 'withGoogle'
 }
