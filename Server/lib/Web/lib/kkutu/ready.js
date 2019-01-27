@@ -691,10 +691,10 @@ $(document).ready(function(){
 		var date = new Date($rec.time);
 		var blob = new Blob([ JSON.stringify($rec) ], { type: "text/plain" });
 		var url = URL.createObjectURL(blob);
-		var fileName = "KKuTu" + (
-			date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " "
-			+ date.getHours() + "-" + date.getMinutes() + "-" + date.getSeconds()
-		) + ".kkt";
+		var fileName = "Prj_KT-Replay-" + (
+			date.getFullYear() + "_" + (date.getMonth() + 1) + "_" + date.getDate() + "-"
+			+ date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()
+		) + ".pktrf";
 		var $a = $("<a>").attr({
 			'download': fileName,
 			'href': url
@@ -837,6 +837,9 @@ $(document).ready(function(){
 		}else if(rule.lang == "en"){
 			$data._ijkey = "#en-pick-";
 			$("#en-pick-list").show();
+		}else if(rule.lang == "ja"){
+			$data._ijkey = "#ja-pick-";
+			$("#ja-pick-list").show();
 		}
 		$stage.dialog.injPickNo.trigger('click');
 		for(i in $data._injpick){

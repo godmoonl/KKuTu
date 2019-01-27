@@ -279,6 +279,9 @@ function onMessage(data){
 			yell(data.value);
 			notice(data.value, L['yell']);
 			break;
+		case 'info':
+			notice(data.value, L['info']);
+			break;
 		case 'dying':
 			yell(L['dying']);
 			notice(L['dying'], L['yell']);
@@ -538,7 +541,8 @@ function runCommand(cmd){
 		'/ㄷㄷ': L['cmd_ee'],
 		'/무시': L['cmd_wb'],
 		'/차단': L['cmd_shut'],
-		'/id': L['cmd_id']
+		'/id': L['cmd_id'],
+		'/exp': L['cmd_exp']
 	};
 	
 	switch(cmd[0].toLowerCase()){
@@ -596,6 +600,16 @@ function runCommand(cmd){
 			break;
 		default:
 			for(i in CMD) notice(CMD[i], i);
+		case "/경험치":
+		case "/exp":
+			if(cmd[1]){
+			lv = cmd[1]
+			notice(cmd[1] + '레벨의 필요 경험치 : ' + Math.round(
+				(!(lv%5)*0.3 + 1) * (!(lv%15)*0.4 + 1) * (!(lv%45)*0.5 + 1) * (
+				120 + Math.floor(lv/5)*60 + Math.floor(lv*lv/225)*120 + Math.floor(lv*lv/2025)*180
+				)
+			))
+			}
 			break;
 	}
 }
@@ -964,6 +978,7 @@ function userListBar(o, forInvite){
 function addonNickname($R, o){
 	if(o.equip['NIK']) $R.addClass("x-" + o.equip['NIK']);
 	if(o.equip['BDG'] == "b1_gm") $R.addClass("x-gm");
+	if(o.equip['BDG'] == "b0_pt") $R.addClass("x-pt");
 }
 function updateRoomList(refresh){
 	var i;
@@ -1355,7 +1370,7 @@ function drawCharFactory(){
 		var bd = $data.box[id];
 		var i, c = 0;
 		
-		if($data._tray.length >= 6) return fail(435);
+		if($data._tray.length >= 100) return fail(435);
 		for(i in $data._tray) if($data._tray[i] == id) c++;
 		if(bd - c > 0){
 			$data._tray.push(id);
