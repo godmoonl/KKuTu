@@ -15,7 +15,6 @@
  * You should have received a copy of the GNU General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 #holder{
 	width: 200px;
 	text-align: center;
@@ -28,6 +27,10 @@
 #kkutu-bulletin{
 	border: 0px;
 	margin-bottom: 5px;
+}
+#kkutu-main-notice {
+    border: 0px;
+    margin-bottom: 5px;
 }
 
 #menu-bar a{
@@ -49,8 +52,8 @@
 	font-size: 20px;
 	font-weight: bold;
 	border: none;
-	border-bottom-left-radius: inherit;
-	border-bottom-right-radius: inherit;
+	/*border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;*/
 }
 	#game-start:hover{ font-size: 24px; background-color: rgba(0, 0, 0, 0.5); }
 .server-list-box{

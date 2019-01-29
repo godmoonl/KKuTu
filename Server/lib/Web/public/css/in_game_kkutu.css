@@ -16,6 +16,7 @@
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
 
+
 equ{
 	font-family: consolas;
 	font-style: italic;
@@ -54,15 +55,15 @@ equ{
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 5;
 }
-#Top{
-	background-color: #7CC4F8;
-	background-image: none;
+#Top {
+    background-color: #6D4FC6;
+    background-image: none;
 }
-#Top .menu-btn{
-	color: #111111;
-	background-color: #7CC4F8;
-	background-image: none;
-}
+    #Top .menu-btn {
+        color: #111111;
+        background-color: #6D4FC6;
+        background-image: none;
+    }
 #Top .menu-sub-btn{ color: #222222; }
 #Bottom .bottom-text{ display: none; }
 
@@ -136,13 +137,6 @@ iframe{
 	background-color: #EEEEEE;
 	z-index: 2;
 }
-    .dialog div {
-        width: 400px;
-        height: 400px;
-        display: block;
-        left: 331.5px;
-        top: 160px;
-    }
 	.dialog-bar{ float: left; margin: 3px 0px; width: 100%; }
 	.dialog-bar h4{ float: left; padding-top: 6px; width: 100px; text-align: center; }
 	.dialog-bar-value{ width: calc(100% - 100px) !important; text-align: left !important; }

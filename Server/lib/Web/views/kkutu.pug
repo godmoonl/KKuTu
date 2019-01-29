@@ -150,7 +150,7 @@ block Middle
 			h4(style='width: 100%; height: 20px;')#quick-queue
 		div.dialog-bar.tail-button
 			button#quick-ok= L('OK')
-	+Dialog('RoomDiag', 300, 400)
+	+Dialog('RoomDiag', 300, 440)
 		div.dialog-bar
 			h4= L('roomTitle')
 			input#room-title(placeholder=(nick || L('guest'))+L('roomDefault'), maxlength=20)
@@ -179,7 +179,7 @@ block Middle
 					option(value=7)= L('modeETY')
 					option(value=11)= L('modeEDA')
 					option(value=13)= L('modeESS')
-		div.dialog-bar(style='margin-top: -5px; height: 50px;')
+		div.dialog-bar(style='margin-top: -5px; height: 85px;')
 			h4
 			h4#game-mode-expl.dialog-bar-value(style='width: 100%; font-size: 11px;')
 		div.dialog-bar
@@ -195,7 +195,7 @@ block Middle
 				option(value=120)
 				option(value=150)
 		div.dialog-bar(style='height: 85px;')
-			h4(style='height: 45px;')= L('misc')
+			h4(style='height: 80px;')= L('misc')
 			- for(var i in locals.OPTIONS)
 				+GameOption(i, 'room')
 			div.dialog-opt#room-injpick-panel

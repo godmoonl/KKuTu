@@ -74,7 +74,7 @@ span{
 	font-size: 15px;
 	text-align: center;
 	color: #47330D;
-	background-image: url('/img/topbg.png');
+	/*background-image: url('/img/topbg.png');*/
 	background-color: #DEAF56;
 	transition: all 200ms ease;
 }
@@ -138,7 +138,7 @@ span{
 #account-info{
 	float: left;
 	padding-top: 8px;
-	width: 80px;
+	width: 100px;
 	text-align: center;
 	cursor: pointer;
 	transition: color 300ms ease;
@@ -297,20 +297,40 @@ span{
 	color: #777777;
 	font-weight: bold;
 }
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-button:start:decrement,
+::-webkit-scrollbar-button:end:increment {
+    display: block;
+    width: 12px;
+    height: 12px;
+    background: url() rgba(0,0,0,.05);
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.05);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,.1);
+}
 
 /* 설명 */
-#ExplBox{
-	box-sizing: border-box;
-	position: fixed;
-	font-size: 12px;
-	min-width: 100px;
-	padding: 4px;
-	border: 1px solid #777777;
-	border-radius: 5px;
-	pointer-events: none;
-	background-color: #222222;
-	background-color: rgba(0, 0, 0, 0.7);
-	z-index: 2;
+#ExplBox {
+    box-sizing: border-box;
+    position: fixed;
+    font-size: 12px;
+    min-width: 100px;
+    padding: 4px;
+    border: 1px solid #777777;
+    border-radius: 5px;
+    pointer-events: none;
+    background-color: #222222;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2;
 }
 #ExplBox expl{
 	display: block;
@@ -322,7 +342,7 @@ explcss[yellow]{
 /* jjowt */
 h1, h2, h3, h4, h5{ margin: 0px; font-weight: normal; }
 h1{ font-size: 24px; font-weight: bold; margin: 4px; }
-h2{ font-size: 20px; margin: 2px; }
+h2{ font-size: 20px;  margin: 2px; }
 h3{ font-size: 15px; }
 h4{ font-size: 13px; }
 h5{ font-size: 11px; }

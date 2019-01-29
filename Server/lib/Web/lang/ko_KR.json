@@ -342,7 +342,7 @@
       "explLeng": "일정 범위 내의 길이의 단어만 허용합니다. / 개발 중",
       "optRandomTurn": "랜덤턴",
       "explRandomTurn": "순서가 무작위로 돌아갑니다. 같은 유저가 연속으로 걸릴 수도 있습니다. 경험치 배율은 130%입니다.",
-      "optUnknownWord": "아무말 대잔치",
+      "optUnknownWord": "언노운워드",
       "explUnknownWord": "사전에 없는 단어만 입력 가능합니다. 보상을 받을 수 없습니다.",
       "optReturns": "리턴",
       "explReturns": "이미 사용한 단어를 다시 사용 가능하게 합니다. 경험치 배율은 25%입니다.",

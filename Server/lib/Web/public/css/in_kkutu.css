@@ -54,15 +54,15 @@ equ{
 	background-color: rgba(0, 0, 0, 0.5);
 	z-index: 5;
 }
-#Top{
-	background-color: #7CC4F8;
-	background-image: none;
+#Top {
+    background-color: #6D4FC6;
+    background-image: none;
 }
-#Top .menu-btn{
-	color: #111111;
-	background-color: #7CC4F8;
-	background-image: none;
-}
+    #Top .menu-btn {
+        color: #111111;
+        background-color: #6D4FC6;
+        background-image: none;
+    }
 #Top .menu-sub-btn{ color: #222222; }
 #Bottom .bottom-text{ display: none; }
 

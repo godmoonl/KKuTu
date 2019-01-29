@@ -273,7 +273,9 @@ exports.submit = function (client, text) {
                 }
             }
             if (!my.opts.unknownword && (firstMove || my.opts.manner)) getAuto.call(my, preChar, preSubChar, 1).then(function (w) {
-                if (w) approved();
+                if (w) {
+                    approved();
+                }
                 else {
                     my.game.loading = false;
                     client.publish('turnError', { code: firstMove ? 402 : 403, value: text }, true);
@@ -283,6 +285,13 @@ exports.submit = function (client, text) {
                 }
             });
             else approved();
+            if (my.opts.unknownword && my.opts.mission) {
+                my.game.loading = false;
+                client.publish('turnError', { code: firstMove ? 402 : 403, value: text }, true);
+                if (client.robot) {
+                    my.readyRobot(client);
+                }
+            }
         }
         function denied(code) {
             my.game.loading = false;
