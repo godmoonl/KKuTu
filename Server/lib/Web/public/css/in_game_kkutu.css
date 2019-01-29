@@ -136,6 +136,13 @@ iframe{
 	background-color: #EEEEEE;
 	z-index: 2;
 }
+    .dialog div {
+        width: 400px;
+        height: 400px;
+        display: block;
+        left: 331.5px;
+        top: 160px;
+    }
 	.dialog-bar{ float: left; margin: 3px 0px; width: 100%; }
 	.dialog-bar h4{ float: left; padding-top: 6px; width: 100px; text-align: center; }
 	.dialog-bar-value{ width: calc(100% - 100px) !important; text-align: left !important; }

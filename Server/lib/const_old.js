@@ -18,9 +18,7 @@
 
 var GLOBAL = require("./sub/global.json");
 
-exports.KKUTU_MAX = 400;
-exports.CUSTOM_HOST = GLOBAL.CUSTOM_HOST;
-exports.HOSTNAME = GLOBAL.HOSTNAME;
+exports.KKUTU_MAX = 100;
 exports.MAIN_PORTS = GLOBAL.MAIN_PORTS;
 exports.TEST_PORT = 4040;
 exports.SPAM_CLEAR_DELAY = 1600;
@@ -30,11 +28,9 @@ exports.BLOCKED_LENGTH = 10000;
 exports.KICK_BY_SPAM = 9;
 exports.MAX_OBSERVER = 16;
 exports.TESTER = GLOBAL.ADMIN.concat([
-	"naver-96346946",
-	"google-103339276222262423156"
+	"96346946",
+	"103339276222262423156"
 ]);
-exports.IS_SECURED = GLOBAL.IS_SECURED;
-exports.SSL_OPTIONS = GLOBAL.SSL_OPTIONS;
 exports.OPTIONS = {
 	'man': { name: "Manner" },
 	'ext': { name: "Injeong" },
@@ -43,25 +39,16 @@ exports.OPTIONS = {
 	'prv': { name: "Proverb" },
 	'str': { name: "Strict" },
 	'k32': { name: "Sami" },
-	'no2': { name: "No2" },
-	'rms': { name: "RandomMission" },
-	'nrt': { name: "NoReturn" },
-	'lvl': { name: "Level" },
-	'leg': { name: "Leng" },
-	'rtu': { name: "RandomTurn" },
-	'uwd': { name: "UnknownWord" },
-	'upl': { name: "UnknownPlayer" },
-	'rtn': { name: "Returns" }
+	'no2': { name: "No2" }
 };
-exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front', 'buff' ];
+exports.MOREMI_PART = [ 'back', 'eye', 'mouth', 'shoes', 'clothes', 'head', 'lhand', 'rhand', 'front' ];
 exports.CATEGORIES = [ "all", "spec", "skin", "badge", "head", "eye", "mouth", "clothes", "hs", "back" ];
 exports.AVAIL_EQUIP = [
 	"NIK", "BDG0", "BDG1", "BDG2", "BDG3", "BDG4",
-	"Mhead", "Meye", "Mmouth", "Mhand", "Mclothes", "Mshoes", "Mback",
-	"buff"
+	"Mhead", "Meye", "Mmouth", "Mhand", "Mclothes", "Mshoes", "Mback"
 ];
 exports.GROUPS = {
-	'spec': [ "PIX", "PIY", "PIZ", "CNS", "buff" ],
+	'spec': [ "PIX", "PIY", "PIZ", "CNS" ],
 	'skin': [ "NIK" ],
 	'badge': [ "BDG0", "BDG1", "BDG2", "BDG3", "BDG4" ],
 	'head': [ "Mhead" ],
@@ -69,13 +56,8 @@ exports.GROUPS = {
 	'mouth': [ "Mmouth" ],
 	'clothes': [ "Mclothes" ],
 	'hs': [ "Mhand", "Mshoes" ],
-	'back': [ "Mback", "Mfront" ],
+	'back': [ "Mback", "Mfront" ]
 };
-exports.CUSTOM_OG = GLOBAL.CUSTOM_OG
-exports.OG_IMAGE = exports.CUSTOM_OG ? GLOBAL.OG_IMAGE : "http://kkutu.kr/img/kkutu/logo.png",
-exports.OG_URL = exports.CUSTON_OG ? GLOBAL.OG_URL : "http://kkutu.kr/",
-exports.OG_TITLE = exports.CUSTON_OG ? GLOBAL.OG_TITLE : "글자로 놀자! 끄투 온라인",
-exports.OG_DESC = exports.CUSTON_OG ? GLOBAL.OG_DESC : "끝말잇기가 이렇게 박진감 넘치는 게임이었다니!"
 exports.RULE = {
 /*
 	유형: { lang: 언어,
@@ -87,42 +69,39 @@ exports.RULE = {
 		ewq: 현재 턴 나가면 라운드 종료?
 	}
 */
-	'EKT': { lang: "en", // 영어 끄투
+	'EKT': { lang: "en",
 		rule: "Classic",
-		opts: ["man", "ext", "mis", "rms", "rtu",
-		"nrt", "uwd", "rtn"],
+		opts: [ "man", "ext", "mis" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'ESH': { lang: "en", // 영어 끝말잇기
+	'ESH': { lang: "en",
 		rule: "Classic",
-		opts: ["ext", "mis", "rms", "nrt", "rtu",
-		"uwd"],
+		opts: [ "man","ext", "mis" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KKT': { lang: "ko", // 쿵쿵따
+	'KKT': { lang: "ko",
 		rule: "Classic",
-		opts: ["man", "ext", "mis", "loa", "str",
-		"k32", "nrt", "rtu"],
+		opts: [ "man", "ext", "mis", "loa", "str", "k32" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KSH': { lang: "ko", // 한국어 끝말잇기
+	'KSH': { lang: "ko",
 		rule: "Classic",
-		opts: ["man", "ext", "mis", "loa", "str", "uwd", "rtu", "rtn"],
+		opts: [ "man", "ext", "mis", "loa", "str" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'CSQ': { lang: "ko", // 한국어 자음퀴즈
+	'CSQ': { lang: "ko",
 		rule: "Jaqwi",
 		opts: [ "ijp" ],
 		time: 1,
@@ -130,65 +109,64 @@ exports.RULE = {
 		big: false,
 		ewq: false
 	},
-	'KCW': { lang: "ko", // 한국어 십자말풀이
+	/*'KCW': { lang: "ko",
 		rule: "Crossword",
-		opts: [ "lvl" ],
+		opts: [],
 		time: 2,
 		ai: false,
 		big: true,
 		ewq: false
-	},
-	'KTY': { lang: "ko", // 한국어 타자대결
+	},*/
+	'KTY': { lang: "ko",
 		rule: "Typing",
-		opts: [ "prv", "lvl" ],
+		opts: [ "prv" ],
 		time: 1,
 		ai: false,
 		big: false,
 		ewq: false
 	},
-	'ETY': { lang: "en", // 영어 타자대결
+	'ETY': { lang: "en",
 		rule: "Typing",
-		opts: [ "prv", "lvl" ],
+		opts: [ "prv" ],
 		time: 1,
 		ai: false,
 		big: false,
 		ewq: false
 	},
-	'KAP': { lang: "ko", // 한국어 앞말잇기
+	'KAP': { lang: "ko",
 		rule: "Classic",
-		opts: ["man", "ext", "mis", "loa", "str", "rtu", "uwd", "rtn"],
+		opts: [ "man", "ext", "mis", "loa", "str" ],
 		time: 1,
 		ai: true,
 		big: false,
 		_back: true,
 		ewq: true
 	},
-	'HUN': { lang: "ko", // 훈민정음
+	'HUN': { lang: "ko",
 		rule: "Hunmin",
-		opts: ["ext", "mis", "rms", "loa", "str",
-		"rtu"],
+		opts: [ "ext", "mis", "loa", "str" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KDA': { lang: "ko", // 한국어 단어 대결
+	'KDA': { lang: "ko",
 		rule: "Daneo",
-		opts: ["ijp", "mis", "rms", "rtu"],
+		opts: [ "ijp", "mis" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'EDA': { lang: "en", // 영어 단어 대결
+	'EDA': { lang: "en",
 		rule: "Daneo",
-		opts: ["ijp", "mis", "rms", "rtu"],
+		opts: [ "ijp", "mis" ],
 		time: 1,
 		ai: true,
 		big: false,
 		ewq: true
 	},
-	'KSS': { lang: "ko", // 한국어 솎솎
+	'KSS': { lang: "ko",
 		rule: "Sock",
 		opts: [ "no2" ],
 		time: 1,
@@ -196,18 +174,10 @@ exports.RULE = {
 		big: true,
 		ewq: false
 	},
-	'ESS': { lang: "en", // 영어 솎솎
+	'ESS': { lang: "en",
 		rule: "Sock",
 		opts: [ "no2" ],
 		time: 1,
-		ai: false,
-		big: true,
-		ewq: false
-	},
-	'ECW': { lang: "en", // 영어 십자말풀이
-		rule: "Crossword",
-		opts: [ "lvl" ],
-		time: 2,
 		ai: false,
 		big: true,
 		ewq: false
@@ -235,6 +205,7 @@ exports.KO_INJEONG = [
 	"KTV"/*국내 방송 프로그램*/,
 	"NSK"/*니세코이*/,
 	"KOT"/*대한민국 철도역*/,
+    "JOT"/*일본 철도역*/,
 	"DOT"/*도타 2*/,
 	"DRR"/*듀라라라!!*/,
 	"DGM"/*디지몬*/,
@@ -269,18 +240,20 @@ exports.KO_INJEONG = [
 	"KMV"/*한국영화*/,
 	"HDC"/*함대 컬렉션*/,
 	"HOS"/*히어로즈 오브 더 스톰*/,
-    "FOR"/*포트나이트*/,
-    "ZHS"/*좀비고등학교*/,
 	/*신규주제*/
 	"WMV"/*외국 영화*/,
 	"WOW"/*월드 오브 워크래프트*/,
+	"TRR"/*테라리아*/,
 	"STG"/*스팀게임*/,
 	"WST"/*웹사이트*/,
 	"THP"/*동방프로젝트*/,
 	"MNM"/*곡명*/,
-	"YTB"/*유튜버*/,
-	"MNC"/*마인크래프트*/
-  
+	"PRN"/*Project_N*/,
+	"CRZ"/*CrowZ*/,
+	"PKT"/*Prj_KT*/,
+	"UTT"/*우타이테*/,
+	"NYA"/*냐체*/,
+	"YTB"/*유튜버*/
 ];
 exports.EN_INJEONG = [
 	"LOL"/*리그 오브 레전드*/,
@@ -294,9 +267,6 @@ exports.EN_INJEONG = [
 	"ACA"/*Arcaea*/,
 	"BMS"/*BMS*/,
 	"TRR"/*테라리아*/
-];
-exports.JA_INJEONG = [
-	"VOM"/*VOCALROID 오리지널 곡*/
 ];
 exports.KO_THEME = [
 	"30"/*경제*/,
@@ -335,18 +305,14 @@ exports.EN_THEME = [
 	"e20"/*식물*/,
 	"e43"/*날씨*/
 ];
-exports.JA_THEME = [
-];
 exports.IJP_EXCEPT = [
-	"OIJ"/*신조어*/,
+	"OIJ"/*신조어*/
 ];
 exports.KO_IJP = exports.KO_INJEONG.concat(exports.KO_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
 exports.EN_IJP = exports.EN_INJEONG.concat(exports.EN_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
-exports.JA_IJP = exports.JA_INJEONG.concat(exports.JA_THEME).filter(function(item){ return !exports.IJP_EXCEPT.includes(item); });
 exports.REGION = {
 	'en': "en",
-	'ko': "kr",
-	'ja': "jp"
+	'ko': "kr"
 };
 exports.KOR_STRICT = /(^|,)(1|INJEONG)($|,)/;
 exports.KOR_GROUP = new RegExp("(,|^)(" + [
@@ -369,27 +335,3 @@ exports.WP_REWARD = function(){
 exports.getRule = function(mode){
 	return exports.RULE[exports.GAME_TYPE[mode]];
 };
-AllChar = []
-var i;
-AllChar.push(String.fromCharCode(20)) // 공백
-AllChar.push(String.fromCharCode(45)) // 하이픈
-AllChar.push(String.fromCharCode(95)) // 언더바
-for(i=48;i<57;i++){ // 영어 대문자
-	AllChar.push(String.fromCharCode(i))
-}
-for(i=97;i<122;i++){ // 영어 소문자
-	AllChar.push(String.fromCharCode(i))
-}
-for(i=12353;i<12436;i++){ // 히라가나
-	AllChar.push(String.fromCharCode(i))
-}
-for(i=12449;i<12540;i++){ // 가타카나
-	AllChar.push(String.fromCharCode(i))
-}
-for(i=12593;i<12643;i++){ // 한글 자모
-	AllChar.push(String.fromCharCode(i))
-}
-for(i=44032;i<55203;i++){ // 완성형 한글
-	AllChar.push(String.fromCharCode(i))
-}
-exports.AllChar = AllChar

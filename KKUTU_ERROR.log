@@ -1,2 +1,31 @@
 This is an error log file of the game server.
 You may use like `tail -f KKUTU_ERROR.log` to watch this.
+:8496 [2019-1-27 15:57:07] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:567:18)
+    at exports.Room.exports.roundReady (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:138:38)
+    at exports.Room.my.route.my.routeSync (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1333:13)
+    at Timeout.my.roundReady [as _onTimeout] (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1139:13)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5):8496 [2019-1-27 15:57:31] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:568:18)
+    at exports.Room.exports.roundReady (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:139:38)
+    at exports.Room.my.route.my.routeSync (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1333:13)
+    at Timeout.my.roundReady [as _onTimeout] (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1139:13)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5):8496 [2019-1-27 15:58:16] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:568:18)
+    at exports.Room.exports.roundReady (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:139:38)
+    at exports.Room.my.route.my.routeSync (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1333:13)
+    at Timeout.my.roundReady [as _onTimeout] (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1139:13)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5):8496 [2019-1-27 16:00:43] ERROR: TypeError: Cannot read property 'charCodeAt' of undefined
+TypeError: Cannot read property 'charCodeAt' of undefined
+    at exports.Room.getSubChar (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:568:18)
+    at exports.Room.exports.roundReady (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\classic.js:139:38)
+    at exports.Room.my.route.my.routeSync (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1333:13)
+    at Timeout.my.roundReady [as _onTimeout] (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\kkutu.js:1139:13)
+    at listOnTimeout (timers.js:324:15)
+    at processTimers (timers.js:268:5)
