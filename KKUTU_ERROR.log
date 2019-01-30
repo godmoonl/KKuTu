@@ -138,4 +138,15 @@ TypeError: Cannot read property '_id' of null
     at Connection.<anonymous> (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:180:19)
     at Connection.emit (events.js:189:13)
     at Socket.<anonymous> (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:133:12)
+    at Socket.emit (events.js:189:13):8496 [2019-1-30 09:07:51] ERROR: TypeError: Cannot read property '_id' of null
+TypeError: Cannot read property '_id' of null
+    at C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:62:27
+    at exports.Tail.go (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\sub\lizard.js:43:16)
+    at C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\Game\games\jaqwi.js:249:21
+    at callback (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:316:13)
+    at Result.preCB (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\sub\collection.js:298:6)
+    at Result.Query.handleReadyForQuery (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\query.js:144:10)
+    at Connection.<anonymous> (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\client.js:180:19)
+    at Connection.emit (events.js:189:13)
+    at Socket.<anonymous> (C:\Users\MHI\Downloads\KKuTu-master\KKuTu-master\Server\lib\node_modules\pg\lib\connection.js:133:12)
     at Socket.emit (events.js:189:13)

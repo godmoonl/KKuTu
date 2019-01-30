@@ -25,16 +25,16 @@ block CSS
 
 block Middle
 	+separator(5)
-	div(style='float: left; width: 100%;')
+	div(style='float: left; width: 100%;margin:0px 0px')
 		div(style='float: left; padding-left: 70px;')
-			h3#holder= L('title').replace(/\[.+?\]/g, "")
 			img#logo(src='/img/kkutu/short_logo.png')
 		div#menu-bar(style='float: right; margin-top: 25px;')
+			div#menu-bar(style='float: right; margin-top: 25px;')
 			a(target='_blank', href='//discord.gg/hXfzwTh', style='background-color: #7289DA;')= L('discord')
 			a(target='_blank', href='//goo.gl/forms/DgWYtCaBwOG5ybSB2', style='background-color: #4078DC;')= L('gmlet')
 		div.jjoriping(style='margin-top: 40px;')
 				button#game-start.jjo-display= L('gameStart')
-	div(style='float: right; margin-top: -120px; width: 50%;')
+	div(style='float: left ;margin-right: 1000px; margin-top: 10px;')
 		div.server-list-box
 			h3.server-list-title
 				a#server-refresh
@@ -43,10 +43,19 @@ block Middle
 				label= L('serverList')
 				label#server-total(style='color: #AAA; font-size: 13px;')
 			div#server-list
-	div(style='float: left;width: calc(50% - 10px);margin-top: 10px;background-color: rgba(0,0,0,0.4);')
+	div(style='float: left;width: calc(35% - 5px);margin-left:350px;margin-top: 10px;background-color: #4A00E0;')
+		div.update-box
+			h3.update-title
+				label=L('updatetitle')
+	div(style='float: left;width: calc(35% - 5px);margin-left:350px;background-color: rgba(0,0,0,0.4);')
 		iframe#kkutu-bulletin(width='100%', height='400px', src='/kkutu_bulletin.html')
-	div(style='float: right; width: calc(50% - 10px);  margin-top: 10px; background-color: rgba(0,0,0,0.4);')
+	div(style='float: right;width: calc(30% - 5px);margin-top:-17.6px;background-color: #4A00E0;')
+		div.notice-box
+			h3.notice-title
+				label=L('noticetitle')
+	div(style='float: right; width: calc(30% - 5px);  background-color: rgba(0,0,0,0.4);')
 		iframe#kkutu-main-notice(width='100%', height='400px', src='/kkutu_main_notice.html')
+	
 	+separator(10)
 
 block Bottom

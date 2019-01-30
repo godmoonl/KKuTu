@@ -52,13 +52,13 @@
 	font-size: 20px;
 	font-weight: bold;
 	border: none;
-	/*border-bottom-left-radius: inherit;
-	border-bottom-right-radius: inherit;*/
+	border-bottom-left-radius: inherit;
+	border-bottom-right-radius: inherit;
 }
 	#game-start:hover{ font-size: 24px; background-color: rgba(0, 0, 0, 0.5); }
 .server-list-box{
 	float: right;
-	width: 320px;
+	width: 325px;
 	background-color: rgba(0, 0, 0, 0.4);
 }
 .server-list-title{
