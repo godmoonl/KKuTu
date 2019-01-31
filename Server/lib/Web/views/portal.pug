@@ -44,17 +44,17 @@ block Middle
 				label= L('serverList')
 				label#server-total(style='color: #AAA; font-size: 15px')
 			div#server-list
-	div(style='float: left;width: calc(35% - 5px);margin-left:350px;margin-top: 10px;background-color: #4A00E0;')
+	div#update-box(style='float: left;width: calc(35% - 5px);margin-left:350px;margin-top: 10px;background-color: #4A00E0;')
 		div.update-box
 			h3.update-title
 				label=L('updatetitle')
-	div(style='float: left;width: calc(35% - 5px);margin-left:350px;background-color: rgba(0,0,0,0.4);')
+	div(style='float: left;width: calc(35% - 5px);margin-left:350px;margin-top:10px;background-color: rgba(0,0,0,0.4);')
 		iframe#kkutu-bulletin(width='100%', height='400px', src='/kkutu_bulletin.html')
-	div(style='float: right;width: calc(30% - 5px);margin-top:-17.6px;background-color: #4A00E0;')
+	div#notice-box(style='float: right;width: calc(30% - 5px)  ;margin-top:-17.6px;background-color: #4A00E0;')
 		div.notice-box
 			h3.notice-title
 				label=L('noticetitle')
-	div(style='float: right; width: calc(30% - 5px);  background-color: rgba(0,0,0,0.4);')
+	div(style='float: right; width: calc(30% - 5px);margin-top:10px;  background-color: rgba(0,0,0,0.4);')
 		iframe#kkutu-main-notice(width='100%', height='400px', src='/kkutu_main_notice.html')
 	
 	+separator(10)
