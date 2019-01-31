@@ -285,20 +285,13 @@ exports.submit = function (client, text) {
                 }
             });
             else approved();
-            if (my.opts.unknownword && my.opts.mission) {
-                my.game.loading = false;
-                client.publish('turnError', { code: firstMove ? 402 : 403, value: text }, true);
-                if (client.robot) {
-                    my.readyRobot(client);
-                }
-            }
         }
         function denied(code) {
             my.game.loading = false;
             client.publish('turnError', { code: code || 404, value: text }, true);
         }
         function check_word(word) {
-            return word.match(/^[ \-\_0-9A-Za-zぁ-ヾㄱ-ㅣ가-힣]*$/)
+            return word.match(/^[ \-\_0-9A-Za-zぁ-ヾㄱ-ㅣ가-힣]*$/)&&word.wordLength<=45
         }
         if ($doc) {
             var gamemode = Const.GAME_TYPE[my.mode]
