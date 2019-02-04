@@ -35,6 +35,8 @@ function callLog(text){
 		if(o[i] < 10) o[i] = "0"+o[i];
 		else o[i] = o[i].toString();
 	}
+	var fileName = "C:\\Users\\MHI\\Downloads\\KKuTu-master\\KKuTu-master\\Server"; 
+    
 	console.log("["+o.year+"-"+o.month+"-"+o.date+" "+o.hour+":"+o.minute+":"+o.second+"] "+text);
 }
 exports.log = function(text){

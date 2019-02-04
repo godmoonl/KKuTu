@@ -1,6 +1,6 @@
   {
     "GLOBAL": {
-      "GPL": "<div style='color: #666;'>모두와 같이 하는 모두끄투! Copyright (C) 2019 NF TEAM 문형일(himoon345@gmail.com), 박찬영(contact@limecorp.kro.kr)<br>이 프로그램은 제품에 대한 어떠한 형태의 보증도 제공되지 않습니다.<br>이 프로그램은 자유 소프트웨어이며 배포 규정을 만족시키는 조건 아래 자유롭게 재배포할 수 있습니다.<br>이에 대한 자세한 사항은 본 프로그램의 구현을 담은 다음 레포지토리에서 확인하십시오: <a target='_blank' href='https://github.com/mhnsoft/KKuTu'>https://github.com/mhnsoft/KKuTu</a></div><br>특수규칙 등 일부 파일 제공:<a target='_blank' href='https://github.com/Preta-Crowz'>Preta-Crowz/프로젝트 끄투, BGM제공 : Rea Lizer (YouTube)",
+      "GPL": "<div style='color: #666;'>모두와 함께 하는 모두끄투! Copyright (C) 2019 NF TEAM 문형일(himoon345@gmail.com), 박찬영(contact@limecorp.kro.kr)<br>이 프로그램은 제품에 대한 어떠한 형태의 보증도 제공되지 않습니다.<br>이 프로그램은 자유 소프트웨어이며 배포 규정을 만족시키는 조건 아래 자유롭게 재배포할 수 있습니다.<br>이에 대한 자세한 사항은 본 프로그램의 구현을 담은 다음 레포지토리에서 확인하십시오: <a target='_blank' href='https://github.com/mhnsoft/KKuTu'>https://github.com/mhnsoft/KKuTu</a></div><br>특수규칙 등 일부 파일 제공:<a target='_blank' href='https://github.com/Preta-Crowz'>Preta-Crowz</a>/프로젝트 끄투, BGM제공 : <a target='_blank' href='https://www.youtube.com/watch?v=92M1RyFRecwRea'>Rea Lizer (YouTube)</a>",
 
       "CREATOR": "개발자 블로그",
       "HOME": "FA{home}",
@@ -111,6 +111,7 @@
     "withNaver": "네이버 아이디로 로그인",
     "withFacebook": "페이스북 아이디로 로그인",
     "withGoogle": "구글 아이디로 로그인",
+    "withDiscord": "디스코드 아이디로 로그인",
     "withTwitter": "트위터 아이디로 로그인",
     "withKakao": "카카오 아이디로 로그인",
     "login_kkutu": "글자로 놀자! 끄투 온라인을 이용하시려면 로그인을 해 주세요.",
@@ -122,8 +123,8 @@
     "login": "로그인"
   },
     "kkutu": {
-      "title": "모두와 같이 하는 모두끄투",
-      "version": "모두 끄투 v3.0",
+      "title": "모두와 함께 하는 모두끄투",
+      "version": "모두 끄투 v3.1",
 
       "meta_desc": "온라인 끝말잇기, 앞말잇기, 자음퀴즈, 십자말풀이, 타자 대결까지! 끄투에서 어휘력의 제왕이 되어 보세요.",
       "meta_keys": "끄투,kkutu,끝말잇기,온라인,웹,쿵쿵따,영어끝말잇기,영어쿵쿵따,시리토리,끝말잇기사이트,자음퀴즈,초성퀴즈,자퀴,십자말풀이,가로세로,타자,타자연습,앞말잇기",
@@ -160,11 +161,11 @@
       "discord": "디스코드",
       "gmlet": "GM 신청",
       "etcSupport": "도움:<a href='http://cafe.naver.com/sdbx' target='_blank'>샌드박스 :: SDBX</a>",
-      "welcome": "환영합니다.",
+      "welcome": "모두끄투에 오신 것을 환영합니다!",
       "welcomeTestServer": "테스트 서버에 접속했습니다. 본 서버는 특별한 공지 없이 폭발하거나 닫힐 수 있습니다.",
-      "loadRemain": "불러오는 중... 앞으로 ",
-      "closed": "서버와의 연결이 종료되었습니다.",
-      "error": "연결 중 문제가 발생했습니다!",
+      "loadRemain": "모두끄투에 접속 중... 앞으로 ",
+      "closed": "서버와의 연결이 끊어졌습니다.",
+      "error": "모두끄투 안내메세지",
       "error_full": "서버 제한 인원을 초과했습니다... 잠시 후 접속해 주세요!!!",
       "error_400": "잘못된 접근입니다.",
       "error_401": "손님 계정은 게임 관전만 가능합니다.\n우측 상단의 로그인 단추를 눌러 로그인해 보세요!",
@@ -344,7 +345,7 @@
       "optRandomTurn": "랜덤턴",
       "explRandomTurn": "순서가 무작위로 돌아갑니다. 같은 유저가 연속으로 걸릴 수도 있습니다. 경험치 배율은 130%입니다.",
       "optUnknownWord": "언노운워드",
-      "explUnknownWord": "사전에 없는 단어만 입력 가능합니다. 보상을 받을 수 없습니다.",
+      "explUnknownWord": "사전에 없는 단어만 입력 가능합니다. 핑을 받을 수 없고 경험치는 점수의 0.5%입니다.",
       "optReturns": "리턴",
       "explReturns": "이미 사용한 단어를 다시 사용 가능하게 합니다. 경험치 배율은 25%입니다.",
 

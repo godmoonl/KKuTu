@@ -17,7 +17,7 @@
 extends layout
 
 block Subject
-	title *** JJO.KR 관리 페이지 ***
+	title 모두끄투 관리자페이지
 
 block JS
 	script(type="text/javascript", src="/js/in_admin.min.js")
@@ -25,67 +25,67 @@ block JS
 block Middle
 	fieldset
 		legend 자격
-		input#db-password(type='password', placeholder='암호')
 		input#db-lang(placeholder='테이블')
+		input#db-password(type='password', placeholder='암호')
 	fieldset
-		legend 추가 요청 받기
+		legend 단어 추가 요청 받기
 		div
-			button#injeong-go 조회
+			button#injeong-go 받은 추가 요청 조회
 			div
 				table
 					thead: tr
-						td 승인?
-						td 링크
-						td #
-						td theme
-						td writer
+						td 선택
+						td 단어의 뜻
+						td 단어
+						td 주제
+						td 신청자
 						td createdAt
 					tbody#injeong-data
-			button#injeong-everything 모두 승인
+			button#injeong-everything 모두 수락
 			button#injeong-nothing 모두 거절
 			button#injeong-apply 적용
 	fieldset
-		legend 상점 DB 다루기
+		legend 상점 아이템 설정
 		div
-			input#shop-word(placeholder='품목 (~ALL)')
+			input#shop-word(placeholder='품목 (~ALL = 전체 조회)')
 			button#shop-go 조회
 			button#shop-hide 숨기기
 			div
 				table
 					thead: tr
-						td #
-						td cost
+						td 식별번호
+						td 가격 (-1 = 상점 미노출)
 						td hit
 						td term
-						td group
-						td updatedAt
-						td options
-						td name_ko_KR
-						td desc_ko_KR
-						td name_en_US
-						td desc_en_US
+						td 그룹
+						td 생성자
+						td 옵션
+						td 한국어 이름
+						td 한국어 설명
+						td 영어 이름
+						td 영어 설명
 					tbody#shop-data
-			button#shop-add 추가
+			button#shop-add 아이템 추가하기
 			button#shop-apply 적용
 	fieldset
-		legend 유저 DB 다루기
+		legend 유저 설정
 		div
-			input#user-id(placeholder='ID')
-			input#user-nick(placeholder='닉네임')
+			input#user-id(placeholder='식별번호')
+			input#user-nick(placeholder='빈칸으로 두세요')
 			button#user-go 조회
 			div
 				table
 					thead: tr
-						td #
-						td money
-						td kkutu
-						td box
-						td equip
-						td exordial
-						td server
-						td lastLogin
-						td black
-						td friends
+						td 식별번호
+						td 핑
+						td 레벨, 플레이 시간,기록
+						td 인벤토리
+						td 장착 중인 물건
+						td 건드리지 마세요
+						td 서버
+						td 마지막 로그인 날짜
+						td 정지 사유
+						td 친구들
 					tbody#user-data
 			button#user-apply 적용
 	fieldset
@@ -96,12 +96,12 @@ block Middle
 			div
 				table
 					thead: tr
-						td #
+						td 식별번호
 						td 닉네임
 						td 서버
 					tbody#gamsi-data
 	fieldset
-		legend 끄투 DB 다루기
+		legend 끄투 데이터베이스
 		div
 			input#db-word(placeholder='단어')
 			button#db-go 조회
@@ -111,9 +111,9 @@ block Middle
 				table
 					thead: tr
 						td #
-						td type
-						td theme
-						td mean
+						td 종류
+						td 주제
+						td 뜻
 						td 행동
 					tbody#wd-data
 			div#word-flag
@@ -121,8 +121,8 @@ block Middle
 			button#word-add 추가
 			button#db-apply 적용
 	fieldset
-		legend 끄투 DB에 단어 추가하기
+		legend 단어 추가하기
 		div
-			input#db-theme(placeholder='주제 (~부터 적으면 검색)')
+			input#db-theme(placeholder='주제')
 			textarea#db-list(rows=20, cols=100)
 			button#db-ok 확인

@@ -55,12 +55,12 @@ equ{
 	z-index: 5;
 }
 #Top {
-    background-color: #8E2DE2;
+    background-color: #1488CC;
     background-image: none;
 }
     #Top .menu-btn {
         color: #111111;
-        background-color: #8E2DE2;
+        background-color: #1488CC;
         background-image: none;
     }
 #Top .menu-sub-btn{ color: #222222; }
@@ -349,10 +349,11 @@ iframe{
 		.room-user-level{ width: 30px; height: 30px; }
 		.room-user-name{ padding: 9px 0px 0px 4px; font-weight: bold; }
 		.room-user:hover{ cursor: pointer; background-color: #EEEEEE; }
-.GameBox{
-	width: 1000px;
-	height: 410px;
-	background-image: url('/img/kkutu/gamebg.png');
+.GameBox {
+    width: 1000px;
+    height: 410px;
+    background-image: url('/img/kkutu/bluescreen.png');
+    animation: BGScroll 4s linear infinite;
 }
 	.GameBox .product-title{ height: 12px; }
 	.GameBox .product-title h5{ float: left; }

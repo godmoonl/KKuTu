@@ -44,12 +44,12 @@ var WDIC = {};
 
 const DEVELOP = exports.DEVELOP = global.test || false;
 const GUEST_PERMISSION = exports.GUEST_PERMISSION = {
-	'create': true,
-	'enter': true,
-	'talk': true,
-	'practice': true,
-	'ready': true,
-	'start': true,
+	'create': false,
+	'enter': false,
+	'talk': false,
+	'practice': false,
+	'ready': false,
+	'start': false,
 	'invite': true,
 	'inviteRes': true,
 	'kick': true,
@@ -196,7 +196,7 @@ Cluster.on('message', function(worker, msg){
 			DIC[msg.target].send('invited', { from: msg.place });
 			break;
 		case "room-new":
-			if(ROOM[msg.room.id] || !DIC[msg.target]){ // 이미 그런 ID의 방이 있다... 그 방은 없던 걸로 해라.
+			if(ROOM[msg.room.id] || !DIC[msg.target]){ // ?��? 그런 ID??방이 ?�다... �?방�? ?�던 걸로 ?�라.
 				worker.send({ type: "room-invalid", room: msg.room });
 			}else{
 				ROOM[msg.room.id] = new KKuTu.Room(msg.room, msg.room.channel);
@@ -220,10 +220,10 @@ Cluster.on('message', function(worker, msg){
 			if(ROOM[msg.id] && DIC[msg.target]){
 				ROOM[msg.id].go(DIC[msg.target]);
 			}else{
-				// 나가기 말고 연결 자체가 끊겼을 때 생기는 듯 하다.
+				// ?��?�?말고 ?�결 ?�체가 ?�겼?????�기?????�다.
 				JLog.warn(`Wrong room-go id=${msg.id}&target=${msg.target}`);
 				if(ROOM[msg.id] && ROOM[msg.id].players){
-					// 이 때 수동으로 지워준다.
+					// ?????�동?�로 지?��???
 					var x = ROOM[msg.id].players.indexOf(msg.target);
 					
 					if(x != -1){
@@ -292,7 +292,7 @@ exports.init = function(_SID, CHAN){
 			socket.on('error', function(err){
 				JLog.warn("Error on #" + key + " on ws: " + err.toString());
 			});
-			// 웹 서버
+			// ???�버
 			if(socket.upgradeReq.headers.host.match(/^127\.0\.0\.2:/)){
 				if(WDIC[key]) WDIC[key].socket.close();
 				WDIC[key] = new KKuTu.WebServer(socket);
@@ -478,7 +478,7 @@ function processClientRequest($c, msg) {
 			if (!(temp = DIC[msg.from])) return;
 			if (temp._friend != $c.id) return;
 			if (msg.res) {
-				// $c와 temp가 친구가 되었다.
+				// $c?� temp가 친구가 ?�었??
 				$c.addFriend(temp.id);
 				temp.addFriend($c.id);
 			}
@@ -549,7 +549,7 @@ function processClientRequest($c, msg) {
 			}
 			delete $c._invited;
 			break;
-		/* 망할 셧다운제
+		/* 망할 ?�다?�제
 		case 'caj':
 			if(!$c._checkAjae) return;
 			clearTimeout($c._checkAjae);

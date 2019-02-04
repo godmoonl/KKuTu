@@ -72,8 +72,8 @@ exports.GROUPS = {
 	'back': [ "Mback", "Mfront" ],
 };
 exports.CUSTOM_OG = GLOBAL.CUSTOM_OG
-exports.OG_IMAGE = exports.CUSTOM_OG ? GLOBAL.OG_IMAGE : "http://kkutu.kr/img/kkutu/logo.png",
-exports.OG_URL = exports.CUSTON_OG ? GLOBAL.OG_URL : "http://kkutu.kr/",
+exports.OG_IMAGE = exports.CUSTOM_OG ? GLOBAL.OG_IMAGE : "http://modukkutu.kro.kr/img/kkutu/logo.png",
+exports.OG_URL = exports.CUSTON_OG ? GLOBAL.OG_URL : "http://modukkutu.kro.kr/",
 exports.OG_TITLE = exports.CUSTON_OG ? GLOBAL.OG_TITLE : "글자로 놀자! 끄투 온라인",
 exports.OG_DESC = exports.CUSTON_OG ? GLOBAL.OG_DESC : "끝말잇기가 이렇게 박진감 넘치는 게임이었다니!"
 exports.RULE = {
@@ -98,8 +98,7 @@ exports.RULE = {
 	},
 	'ESH': { lang: "en", // 영어 끝말잇기
 		rule: "Classic",
-		opts: ["ext", "mis", "rms", "nrt", "rtu",
-		"uwd"],
+		opts: ["ext", "mis", "rms","rtu"],
 		time: 1,
 		ai: true,
 		big: false,
@@ -108,7 +107,7 @@ exports.RULE = {
 	'KKT': { lang: "ko", // 쿵쿵따
 		rule: "Classic",
 		opts: ["man", "ext", "mis", "loa", "str",
-		"k32", "nrt", "rtu"],
+		"k32", "rtu"],
 		time: 1,
 		ai: true,
 		big: false,
@@ -276,7 +275,7 @@ exports.KO_INJEONG = [
 	"WOW"/*월드 오브 워크래프트*/,
 	"STG"/*스팀게임*/,
 	"WST"/*웹사이트*/,
-	"THP"/*동방프로젝트*/,
+	"DBP"/*동방프로젝트*/,
 	"MNM"/*곡명*/,
 	"YTB"/*유튜버*/,
 	"MNC"/*마인크래프트*/
@@ -346,7 +345,6 @@ exports.JA_IJP = exports.JA_INJEONG.concat(exports.JA_THEME).filter(function(ite
 exports.REGION = {
 	'en': "en",
 	'ko': "kr",
-	'ja': "jp"
 };
 exports.KOR_STRICT = /(^|,)(1|INJEONG)($|,)/;
 exports.KOR_GROUP = new RegExp("(,|^)(" + [
@@ -380,12 +378,14 @@ for(i=48;i<57;i++){ // 영어 대문자
 for(i=97;i<122;i++){ // 영어 소문자
 	AllChar.push(String.fromCharCode(i))
 }
+/*
 for(i=12353;i<12436;i++){ // 히라가나
 	AllChar.push(String.fromCharCode(i))
 }
 for(i=12449;i<12540;i++){ // 가타카나
 	AllChar.push(String.fromCharCode(i))
 }
+*/
 for(i=12593;i<12643;i++){ // 한글 자모
 	AllChar.push(String.fromCharCode(i))
 }

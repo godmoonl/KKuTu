@@ -1195,7 +1195,7 @@ exports.Room = function(room, channel){
 				res[i].rank = Number(i);
 			}
 			pv = res[i].score;
-			rw = getRewards(my.mode, o.game.score / res[i].dim, o.game.bonus, res[i].rank, rl, sumScore);
+			rw = getRewards(my.mode, o.game.score / res[i].dim, o.game.bonus, res[i].rank, rl, sumScore, my.opts);
 			rw.playTime = now - o.playAt;
 			o.applyEquipOptions(rw); // 착용 아이템 보너스 적용
 			if(rw.together){
@@ -1291,8 +1291,11 @@ exports.Room = function(room, channel){
 	my.turnNext = function(force){
 		if(!my.gaming) return;
 		if(!my.game.seq) return;
-		
-		my.game.turn = (my.game.turn + 1) % my.game.seq.length;
+		if(my.opts && my.opts.randomturn){
+			my.game.turn = Math.floor(Math.random()*my.game.seq.length)
+		} else {
+			my.game.turn = (my.game.turn + 1) % my.game.seq.length;
+		};
 		my.turnStart(force);
 	};
 	my.turnEnd = function(){
@@ -1381,12 +1384,32 @@ function shuffle(arr){
 	
 	return r;
 }
-function getRewards(mode, score, bonus, rank, all, ss){
+function getRewards(mode, score, bonus, rank, all, ss, opts){
+	if (opts.unknownword) return { score :0, money: 0 }
+
 	var rw = { score: 0, money: 0 };
 	var sr = score / ss;
 	
-	// all은 1~8
-	// rank는 0~7
+	if (opts.manner) rw.score = rw.score * 0.9; // 매너
+	if (opts.injeong) rw.score = rw.score * 0.75;  // 어인정
+	if (opts.mission) { // 미션
+		if (!opts.randommission) rw.score = rw.score * 0.8; // 랜덤 미션
+		else rw.score = rw.score * 0.7;
+	};
+	if (opts.proverb) rw.score = rw.score * 1.3; // 속담
+	if (opts.loanword) rw.score = rw.score * 1.2; // 우리말
+	if (opts.strict) rw.score = rw.score * 1.3; // 깐깐
+	if (opts.sami) rw.score = rw.score * 1.5; // 3232
+	if (opts.no2) rw.score = rw.score * 1.5; // 2글자 금지
+
+	if (opts.returns) rw.score = rw.score * 0.25 // 리턴
+	if (opts.randomturn) rw.score = rw.score * 1.3; // 랜덤 턴
+	if (opts.noreturn) rw.score = rw.score * 0.9; // 도돌이 금지
+	// if (opts.unknownplayer) rw.score = rw.score * 3; // 언노운 플레이어
+	// if (opts.leng) rw.score = rw.score * 1.3; // 길이제한
+
+	// all은 1~16
+	// rank는 0~15
 	switch(Const.GAME_TYPE[mode]){
 		case "EKT":
 			rw.score += score * 1.4;
@@ -1449,6 +1472,7 @@ function getRewards(mode, score, bonus, rank, all, ss){
 	rw.money = rw.money || 0;
 	
 	// applyEquipOptions에서 반올림한다.
+
 	return rw;
 }
 function filterRobot(item){
