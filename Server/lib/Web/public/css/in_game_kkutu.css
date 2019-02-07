@@ -435,18 +435,18 @@ iframe{
 			background-color: #DEAF56;
 		}
 		.cw .jjoDisplayBar{ width: 308px; height: 330px; transition: all 0.5s ease; }
-			.jjo-display{
-				padding: 8px 5px;
-				border-radius: 10px;
-				border-bottom-left-radius: 0px;
-				border-bottom-right-radius: 0px;
-				width: 476px;
-				height: 23px;
-				font-size: 20px;
-				text-align: center;
-				color: #EEEEEE;
-				background-color: rgba(0, 0, 0, 0.7);
-			}
+.jjo-display {
+    padding: 8px 5px;
+    border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    width: 476px;
+    height: 23px;
+    font-size: 20px;
+    text-align: center;
+    color: #EEEEEE;
+    background: linear-gradient(to left,#1488CC,#2B32B2);
+}
 			.jjo-display-word-length{ color: orange; font-size: 14px; }
 			.cw .jjo-display{ position: relative; padding: 5px; width: 298px; height: 298px; }
 				.display-text{ width: 20px; text-align: center; z-index: 1; }
