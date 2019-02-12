@@ -83,6 +83,23 @@
     color: #6633CC;
     text-shadow: 0px 0px 2px 0 #6633CC;
 }
+.x-cg .users-name::before {
+    content: "[총관리자]";
+    color: #000000;
+    text-shadow: 0px 0px 2px #F4F4F4;
+}
+
+.chat-item > .x-cg::before {
+    content: "[총관리자]";
+    color: #000000;
+    text-shadow: 0px 0px 2px #F4F4F4;
+}
+
+.room-user-title > .x-cg::before {
+    content: "[총관리자]";
+    color: #000000;
+    text-shadow: 0px 0px 2px 0 #F4F4F4;
+}
 
 .x-red_name{ color: ; }
 .x-orange_name{ color: #FFA533; }

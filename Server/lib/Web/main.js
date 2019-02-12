@@ -246,9 +246,9 @@ Server.get("/", function(req, res){
 			'KO_THEME': Const.KO_THEME,
 			'EN_THEME': Const.EN_THEME,
 			'IJP_EXCEPT': Const.IJP_EXCEPT,
-			'ogImage': "http://kkutu.kr/img/kkutu/logo.png",
-			'ogURL': "http://kkutu.kr/",
-			'ogTitle': "글자로 놀자! 끄투 온라인",
+			'ogImage': "http://modukkutu.kro.kr/img/kkutu/logo.png",
+			'ogURL': "http://modukkutu.kro.kr/",
+			'ogTitle': "모두와 함께하는 모두끄투!",
 			'ogDescription': "끝말잇기가 이렇게 박진감 넘치는 게임이었다니!"
 		});
 	}
