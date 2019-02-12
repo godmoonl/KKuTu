@@ -746,10 +746,10 @@ $(document).ready(function(){
 		var date = new Date($rec.time);
 		var blob = new Blob([ JSON.stringify($rec) ], { type: "text/plain" });
 		var url = URL.createObjectURL(blob);
-		var fileName = "Prj_KT-Replay-" + (
-			date.getFullYear() + "_" + (date.getMonth() + 1) + "_" + date.getDate() + "-"
-			+ date.getHours() + "_" + date.getMinutes() + "_" + date.getSeconds()
-		) + ".pktrf";
+		var fileName = "KKuTu" + (
+			date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " "
+			+ date.getHours() + "-" + date.getMinutes() + "-" + date.getSeconds()
+		) + ".kkt";
 		var $a = $("<a>").attr({
 			'download': fileName,
 			'href': url
@@ -849,6 +849,15 @@ $(document).ready(function(){
 			$stage.dialog.dress.hide();
 		});
 	});
+	$stage.dialog.dressOK.on('click', function (e) {
+	    $(e.currentTarget).attr('disabled', true);
+	    $.post("/nickname", { data: $("#dress-nickname").val() }, function (res) {
+	        $stage.dialog.dressOK.attr('disabled', false);
+	        if (res.error) return fail(res.error);
+
+	        $stage.dialog.dress.hide();
+	    });
+	});
 	$("#DressDiag .dress-type").on('click', function(e){
 		var $target = $(e.currentTarget);
 		var type = $target.attr('id').slice(11);
@@ -892,9 +901,6 @@ $(document).ready(function(){
 		}else if(rule.lang == "en"){
 			$data._ijkey = "#en-pick-";
 			$("#en-pick-list").show();
-		}else if(rule.lang == "ja"){
-			$data._ijkey = "#ja-pick-";
-			$("#ja-pick-list").show();
 		}
 		$stage.dialog.injPickNo.trigger('click');
 		for(i in $data._injpick){
@@ -2418,7 +2424,6 @@ function runCommand(cmd){
 		'/무시': L['cmd_wb'],
 		'/차단': L['cmd_shut'],
 		'/id': L['cmd_id'],
-		'/exp': L['cmd_exp']
 	};
 	
 	switch(cmd[0].toLowerCase()){
@@ -2476,17 +2481,6 @@ function runCommand(cmd){
 			break;
 		default:
 			for(i in CMD) notice(CMD[i], i);
-		case "/경험치":
-		case "/exp":
-			if(cmd[1]){
-			lv = cmd[1]
-			notice(cmd[1] + '레벨의 필요 경험치 : ' + Math.round(
-				(!(lv%5)*0.3 + 1) * (!(lv%15)*0.4 + 1) * (!(lv%45)*0.5 + 1) * (
-				120 + Math.floor(lv/5)*60 + Math.floor(lv*lv/225)*120 + Math.floor(lv*lv/2025)*180
-				)
-			))
-			}
-			break;
 	}
 }
 function sendWhisper(target, text){
@@ -2854,7 +2848,6 @@ function userListBar(o, forInvite){
 function addonNickname($R, o){
 	if(o.equip['NIK']) $R.addClass("x-" + o.equip['NIK']);
 	if(o.equip['BDG'] == "b1_gm") $R.addClass("x-gm");
-	if(o.equip['BDG'] == "b0_pt") $R.addClass("x-pt");
 }
 function updateRoomList(refresh){
 	var i;
@@ -3121,6 +3114,7 @@ function drawMyDress(avGroup){
 	$(".dress-type.selected").removeClass("selected");
 	$("#dress-type-all").addClass("selected");
 	$("#dress-exordial").val(my.exordial);
+	$("#dress-nickname").val(my.nickname);
 	drawMyGoods(avGroup || true);
 }
 function renderGoods($target, preId, filter, equip, onClick){

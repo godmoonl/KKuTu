@@ -44,9 +44,15 @@ function process(req, accessToken, MainDB, $p, done) {
         'createdAt': now
     }).on();
     MainDB.users.findOne([ '_id', $p.id ]).on(function($body){
+        if ($body.nickname) $p.title = $body.nickname;
         req.session.profile = $p;
-        MainDB.users.update([ '_id', $p.id ]).set([ 'lastLogin', now ]).on();
+        MainDB.users.update(['_id', $p.id]).set(['lastLogin', now]).on();
+        MainDB.session.upsert(['_id', req.session.id]).set({
 
+            'profile': $p,
+            'createdAt': now
+
+        }).on();
         done(null, $p);
     });
 }
