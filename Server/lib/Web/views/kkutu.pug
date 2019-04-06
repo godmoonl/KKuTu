@@ -194,6 +194,7 @@ block Middle
 				option(value=90)
 				option(value=120)
 				option(value=150)
+				option(value=180)
 		div.dialog-bar(style='height: 85px;')
 			h4(style='height: 80px;')= L('misc')
 			- for(var i in locals.OPTIONS)
@@ -349,13 +350,13 @@ block Middle
 			h4.dialog-bar-value#replay-players -
 		div.dialog-bar.tail-button
 			button#replay-view= L('replayView')
-	+Dialog('DressDiag', 600, 280, L('dress'))
-		div.dialog-bar
-			h4(style='width: 150px;')= L('myExordial')
-			input#dress-exordial(type='textfield', placeholder=L('myExordialX'), style='width: 435px;', maxlength=100)
+	+Dialog('DressDiag', 600,310, L('dress'))
 		div.dialog-bar
 			h4(style='width: 150px;')= L('myNickname')
 			input#dress-nickname(type='textfield', placeholder=L('myNicknameX'), style='width: 435px;', maxlength=10)
+		div.dialog-bar
+			h4(style='width: 150px;')= L('myExordial')
+			input#dress-exordial(type='textfield', placeholder=L('myExordialX'), style='width: 435px;', maxlength=100)
 		div.dialog-bar(style='width: 150px;')
 			div.moremi#dress-view(style='float: left; width: 150px; height: 150px;')
 			h4(style='width: 100%; font-weight: bold;')= L('myMoremi')

@@ -55,6 +55,11 @@
 	border-bottom-left-radius: inherit;
 	border-bottom-right-radius: inherit;
 }
+.game-start{
+	float: left;
+	width: 325px;
+	height: 110px;
+}
 	#game-start:hover{ font-size: 24px; background-color: rgba(0, 0, 0, 0.5); }
 .server-list-box{
 	float: right;
@@ -194,7 +199,8 @@ ul, li {
     font-family: inherit;
 }
 #notice-box {
-    background: linear-gradient(to left,#1488CC,#2B32B2);
+    
+    background: linear-gradient(to left,#1488CC,#2b32b2);
     font-family:inherit;
     height: 170px;
 }

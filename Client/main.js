@@ -37,11 +37,11 @@ Electron.app.on('activate', () => {
 	}
 });
 
-function onReady(){
+function onReady() {
+   
 	main = new BrowserWindow({
 		width: 800,
 		height: 600
 	});
-
-	main.loadURL(__dirname + "/index.pug");
+    main.loadURL("http://modutu.kro.kr")
 }

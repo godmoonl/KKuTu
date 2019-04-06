@@ -26,39 +26,14 @@ block CSS
 block Middle
 	+separator(5)
 	div(style='float: left; width: 100%;margin:0px 0px')
-		div(style='float: left; padding-left: 400px;margin-top:10px;margin-bottom:20px;')
+		div(style='float: left; padding-left: 400px;margin-top:10px;margin-bottom:30px;')
 			img#logo(src='/img/kkutu/short_logo.png')
-		//-
-			div#menu-bar(style='float: right; margin-top: 25px;')
-			div#menu-bar(style='float: right; margin-top: 25px;')
-			a(target='_blank', href='//discord.gg/hXfzwTh', style='background-color: #4A00E0;')= L('discord')
-			a(target='_blank', href='//goo.gl/forms/DgWYtCaBwOG5ybSB2', style='background-color: #2B32B2;')= L('gmlet')
 		div.jjoriping(style='margin-top:40px;')
-				button#game-start.jjo-display(style='margin-top:180px')= L('gameStart')
-		//-
-			div#notice-box(style='float: right;width:px;margin-left:10px;padding:2px 0px;margin-top:-50px;background-color: #4A00E0;')
-			div.notice-box
-				h3.notice-title
-					label=L('noticetitle')
-		div#notice-box(style='float: right; width: 1010px;margin-top:-288px;margin-left:10px;background-color: rgba(0,0,0,0.4);')
+				a(href="/?server=0")
+					img.game-start(src="/img/kkutu/gamestart.png",style="margin-top:150px;")
+				//button#game-start.jjo-display(style='margin-top:180px')= L('gameStart')
+		div#notice-box(style='float: right; width: 1010px;margin-top:-300px;margin-left:10px;background-color: rgba(0,0,0,0.4);')
 			iframe#kkutu-main-notice(width='100%', height='170px', src='/kkutu_main_notice.html')
-	//-	
-		#slide
-			input#pos1(type='radio', name='pos' ,checked='')
-			input#pos2(type='radio', name='pos')
-			input#pos3(type='radio', name='pos')
-			input#pos4(type='radio' ,name='pos')
-			ul
-				li
-				li
-				li
-				li
-			p.pos
-				label(for='pos1')
-				label(for='pos2')
-				label(for='pos3')
-				label(for='pos4')
-
 	div(style='float: left; margin-bottom:40px;margin-top:20px;')
 		div.server-list-box
 			h3.server-list-title
@@ -73,16 +48,15 @@ block Middle
 			h3.discord-title
 				a(target='_blank', href='//discord.gg/hXfzwTh', style='padding:20px 100px')= L('discord')
 	div#discord-box(style='float: left;width: 325px;height:50px;margin-top:20px;background-color: #4A00E0;')
-	//-
 		div.discord-box
 			h3.discord-title
-				a(target='_blank', href='//goo.gl/forms/DgWYtCaBwOG5ybSB2', style='padding:20px 100px')= L('gmlet')
+				a(target='_blank',  style='padding:20px 100px')= L('prepare')
 
-	div#update-box(style='float: right;width: 670px;margin-left:20px;padding:2px 0px;margin-top:-308px;background-color: #4A00E0;')
+	div#update-box(style='float: right;width: 670px;margin-left:20px;padding:2px 0px;margin-top:-332px;background-color: #4A00E0;')
 		div.update-box
 			h3.update-title
 				label=L('updatetitle')
-	div(style='float: right;width:670px;margin-left:20px;margin-top:-286px;background-color: rgba(0,0,0,0.4);')
+	div(style='float: right;width:670px;margin-left:20px;margin-top:-310px;background-color: rgba(0,0,0,0.4);')
 		iframe#kkutu-bulletin(width='100%', height='400px', src='/kkutu_bulletin.html')
 	//-
 		div#notice-box(style='float: right;width: 325px  ;margin-left:10px;padding:2px 0px;margin-top:-50px;background-color: #4A00E0;')

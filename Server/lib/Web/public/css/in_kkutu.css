@@ -37,7 +37,7 @@ equ{
 	}
 	#intro-text{
 		position: absolute;
-		top: 360px;
+		top: 400px;
 		left: 0px;
 		width: 100%;
 		font-size: 15px;
@@ -253,24 +253,24 @@ iframe{
 		margin: 3px;
 		width: 364px;
 		height: 64px;
+		background : url('/img/kkutu/gamewait.png');
 		box-shadow: 0px 1px 1px #777777;
 		cursor: pointer;
-		background-color: #E4E4E4;
+		
 		transition: all 300ms ease;
 	}
-		.rooms-create{ background-color: #8EC0F3; }
-		.rooms-create>div{ float: none; padding: 20px 0px; text-align: center; font-size: 15px; font-weight: bold; }
+		.rooms-create{ background-color: #8EC0F3;background : url('/img/kkutu/create.png'); }
+		.rooms-create>div{ float: none; padding: 20px 0px; text-align: center; font-size: 0px; font-weight: bold }
 		.rooms-channel{ position: relative; width: 10px; height: 10px; border-radius: 5px; margin-right: -10px; }
 			.rooms-channel:hover{ width: 8px; height: 8px; border: 1px solid #000; }
 			.channel-1{ background-color: #F99; }
-			.channel-2{ background-color: #FF7; }
-			.channel-3{ background-color: #7C7; }
+s			.channel-3{ background-color: #7C7; }
 			.channel-4{ background-color: #99F; }
-		.rooms-gaming{ background-color: #FFBBBB; }
+		.rooms-gaming{ background : url('/img/kkutu/gameplay.png');}
 			.rooms-gaming .rooms-number{ border-color: #CC9999; }
-		.rooms-item:hover{ background-color: #F4F4F4; }
-			.rooms-gaming:hover{ background-color: #FFCCCC; }
-			.rooms-create:hover{ background-color: #AADDFF; }
+		.rooms-item:hover{ background : url('/img/kkutu/gamewait.png'); }
+			.rooms-gaming:hover{ background : url('/img/kkutu/gameplay.png');}
+			.rooms-create:hover{ background-color: #AADDFF;background : url('/img/kkutu/create.png'); }
 		.rooms-number{ padding-top: 18px; border-right: 1px solid #CCCCCC; margin-right: 4px; width: 49px; height: 46px; font-size: 24px; }
 		.rooms-title{ padding-top: 4px; width: 270px; height: 20px; font-size: 16px; font-weight: bold; }
 		.rooms-limit{ padding-top: 7px; width: 39px; height: 17px; text-align: center; }

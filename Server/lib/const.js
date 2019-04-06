@@ -270,29 +270,14 @@ exports.KO_INJEONG = [
 	"HOS"/*히어로즈 오브 더 스톰*/,
     "FOR"/*포트나이트*/,
     "ZHS"/*좀비고등학교*/,
-	/*신규주제*/
-	"WMV"/*외국 영화*/,
 	"WOW"/*월드 오브 워크래프트*/,
-	"STG"/*스팀게임*/,
-	"WST"/*웹사이트*/,
+	"CKR"/*쿠키런*/,
 	"DBP"/*동방프로젝트*/,
-	"MNM"/*곡명*/,
-	"YTB"/*유튜버*/,
-	"MNC"/*마인크래프트*/
+    "WTN"/*웹툰*/
   
 ];
 exports.EN_INJEONG = [
-	"LOL"/*리그 오브 레전드*/,
-	/*신규주제*/
-	"EAC"/*EZ2AC,3S*/,
-	"MNM"/*곡명*/,
-	"DMX"/*DJMAX*/,
-	"RAK"/*RAYARK (Cytus,Deemo,VOEZ)*/,
-	"ZHD"/*Projct ZHD (Zyon,HachiHachi,Dynamix)*/,
-	"BMN"/*BEMANI (beatmania,pop'n music,DanceDanceRevolution,Gitadora,pop'n stage,beatmania IIDX,DanceDanceRevolution Solo,Keyboardmania,beatmania III,DanceManiaX,ParaPara Paradise,MAMBO A GO GO,Toy'sMarch,DANCE 86.4,jubeat,REFLEC BEAT,DanceEvolution ARCADE,SOUND VOLTEX,Future TomTom,BeatStream,MÚSECA,NOSTALGIA)*/,
-	"ACA"/*Arcaea*/,
-	"BMS"/*BMS*/,
-	"TRR"/*테라리아*/
+	"LOL"/*리그 오브 레전드*/
 ];
 exports.JA_INJEONG = [
 	"VOM"/*VOCALROID 오리지널 곡*/

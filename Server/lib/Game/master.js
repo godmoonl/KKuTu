@@ -56,7 +56,7 @@ const GUEST_PERMISSION = exports.GUEST_PERMISSION = {
 	'kickVote': true,
 	'wp': true
 };
-const ENABLE_ROUND_TIME = exports.ENABLE_ROUND_TIME = [ 10, 30, 60, 90, 120, 150 ];
+const ENABLE_ROUND_TIME = exports.ENABLE_ROUND_TIME = [ 10, 30, 60, 90, 120, 150,180 ];
 const ENABLE_FORM = exports.ENABLE_FORM = [ "S", "J" ];
 const MODE_LENGTH = exports.MODE_LENGTH = Const.GAME_TYPE.length;
 const PORT = process.env['KKUTU_PORT'];
@@ -116,6 +116,16 @@ function processAdmin(id, value){
 				JLog.success("Dumping success.");
 			});*/
 			return null;
+		case "ip":
+			try {
+				if(DIC[value]) {
+					if (DIC[id]) DIC[id].send('tail', { a: "IP", rid: value, id: "", msg: DIC[value].socket.upgradeReq.connection.remoteAddress});
+					else JLog.log("IP ERROR : <"+id+">존재하지 않습니다 ( 오프라인일시에도 포함)");
+				} else JLog.log("IP ERROR : <"+id+"> 존재하지 않습니다 ( 오프라인일시에도 포함)");
+			} catch(e) {
+				console.log(e);
+			}
+		return null;
 	}
 	return value;
 }
@@ -196,7 +206,7 @@ Cluster.on('message', function(worker, msg){
 			DIC[msg.target].send('invited', { from: msg.place });
 			break;
 		case "room-new":
-			if(ROOM[msg.room.id] || !DIC[msg.target]){ // ?��? 그런 ID??방이 ?�다... �?방�? ?�던 걸로 ?�라.
+			if(ROOM[msg.room.id] || !DIC[msg.target]){ // ?��? 그런 ID??방이 ?�다... �?방�? ?�던 걸로 ?�라.
 				worker.send({ type: "room-invalid", room: msg.room });
 			}else{
 				ROOM[msg.room.id] = new KKuTu.Room(msg.room, msg.room.channel);
@@ -220,10 +230,10 @@ Cluster.on('message', function(worker, msg){
 			if(ROOM[msg.id] && DIC[msg.target]){
 				ROOM[msg.id].go(DIC[msg.target]);
 			}else{
-				// ?��?�?말고 ?�결 ?�체가 ?�겼?????�기?????�다.
+				// ?��?�?말고 ?�결 ?�체가 ?�겼?????�기?????�다.
 				JLog.warn(`Wrong room-go id=${msg.id}&target=${msg.target}`);
 				if(ROOM[msg.id] && ROOM[msg.id].players){
-					// ?????�동?�로 지?��???
+					// ?????�동?�로 지?��???
 					var x = ROOM[msg.id].players.indexOf(msg.target);
 					
 					if(x != -1){
@@ -292,7 +302,7 @@ exports.init = function(_SID, CHAN){
 			socket.on('error', function(err){
 				JLog.warn("Error on #" + key + " on ws: " + err.toString());
 			});
-			// ???�버
+			// ???�버
 			if(socket.upgradeReq.headers.host.match(/^127\.0\.0\.2:/)){
 				if(WDIC[key]) WDIC[key].socket.close();
 				WDIC[key] = new KKuTu.WebServer(socket);
@@ -341,7 +351,7 @@ exports.init = function(_SID, CHAN){
 				$c.refresh().then(function(ref){
 					if(ref.result == 200){
 						DIC[$c.id] = $c;
-						DNAME[($c.profile.title || $c.profile.name).replace(/\s/g, "")] = $c.id;
+						if($c.profile.title)DNAME[($c.profile.title || $c.profile.name).replace(/\s/g, "")] = $c.id;
 						MainDB.users.update([ '_id', $c.id ]).set([ 'server', SID ]).on();
 
 						if (($c.guest && GLOBAL.GOOGLE_RECAPTCHA_TO_GUEST) || GLOBAL.GOOGLE_RECAPTCHA_TO_USER) {
@@ -478,7 +488,7 @@ function processClientRequest($c, msg) {
 			if (!(temp = DIC[msg.from])) return;
 			if (temp._friend != $c.id) return;
 			if (msg.res) {
-				// $c?� temp가 친구가 ?�었??
+				// $c?� temp가 친구가 ?�었??
 				$c.addFriend(temp.id);
 				temp.addFriend($c.id);
 			}
@@ -549,7 +559,7 @@ function processClientRequest($c, msg) {
 			}
 			delete $c._invited;
 			break;
-		/* 망할 ?�다?�제
+		/* 망할 ?�다?�제
 		case 'caj':
 			if(!$c._checkAjae) return;
 			clearTimeout($c._checkAjae);

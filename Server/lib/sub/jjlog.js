@@ -19,7 +19,8 @@
 // 모듈 호출
 
 var colors = require('colors');
-
+var fs = require("fs");
+var tmp = "./log/"
 function callLog(text){
 	var date = new Date();
 	var o = {
@@ -35,25 +36,43 @@ function callLog(text){
 		if(o[i] < 10) o[i] = "0"+o[i];
 		else o[i] = o[i].toString();
 	}
-	var fileName = "C:\\Users\\MHI\\Downloads\\KKuTu-master\\KKuTu-master\\Server"; 
-    
 	console.log("["+o.year+"-"+o.month+"-"+o.date+" "+o.hour+":"+o.minute+":"+o.second+"] "+text);
 }
+function saveLog(text){
+	var date = new Date();
+	var o = {
+		year: 1900 + date.getYear(),
+		month: date.getMonth() + 1,
+		date: date.getDate(),
+		hour: date.getHours(),
+		minute: date.getMinutes(),
+		second: date.getSeconds()
+	}, i;
+	fs.appendFile(tmp+o.year+"-"+o.month+"-"+o.date+".log","["+o.year+"-"+o.month+"-"+o.date+" "+o.hour+":"+o.minute+":"+o.second+"] "+text+"\n",function(err){
+		if(err)throw err;
+	});
+}
 exports.log = function(text){
+	saveLog(text);
 	callLog(text);
 };
 exports.info = function(text){
+	saveLog(text.cyan);
 	callLog(text.cyan);
 };
 exports.success = function(text){
+	saveLog(text.green);
 	callLog(text.green);
 };
 exports.alert = function(text){
+	saveLog(text.yellow);
 	callLog(text.yellow);
 };
 exports.warn = function(text){
+	saveLog(text.black.bgYellow);
 	callLog(text.black.bgYellow);
 };
 exports.error = function(text){
+	saveLog(text.bgRed);
 	callLog(text.bgRed);
 };

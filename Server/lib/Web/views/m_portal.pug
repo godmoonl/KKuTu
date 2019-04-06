@@ -34,19 +34,19 @@ block JS
 block Middle
 	+separator(5)
 	div(style='margin-left: calc(50% - 170px);')
-		div(style='float: left; padding-left: 70px;')
-			h3#holder= L('title')
+		div(style='float: left; padding-left: 70px;margin-top:20px;')
 			img#logo(src='/img/kkutu/short_logo.png')
-		div.jjoriping(style='margin-top: 10px;')
-			img.jjoObj.jjoEyeL(src='/img/jjoeyeL.png', style='top: 40px; left: -270px;')
-			img.jjoObj.jjoNose(src='/img/jjonose.png', style='top: 42px; left: -170px;')
-			img.jjoObj.jjoEyeR(src='/img/jjoeyeR.png', style='top: 40px; left: -70px;')
-			div.jjoDisplayBar(style='float: left; margin-top: -30px; width: 325px; height: 85px;')
-				button#game-start.jjo-display= L('gameStart')
-	div#menu-bar(style='float: left; margin: 10px 0px 10px calc(50% - 136px); width: 100%;')
-		a(target='_blank', href='//discord.gg/hXfzwTh', style='background-color: #7289DA;')= L('discord')
-			a(target='_blank', href='//goo.gl/forms/DgWYtCaBwOG5ybSB2', style='background-color: #4078DC;')= L('gmlet')
-	div(style='float: left; margin-left: calc(50% - 160px);')
+		div.jjoriping(style='margin-top: 10px;margin-left:10px;')
+			button#game-start.jjo-display= L('gameStart')
+	div#discord-box(style='float: left;width: 325px;height:50px;margin-left:47px;margin-top:20px;background-color: #4A00E0;')
+		div.discord-box
+			h3.discord-title
+				a(target='_blank', href='//discord.gg/hXfzwTh', style='padding:20px 100px')= L('discord')
+	div#discord-box(style='float: left;width: 325px;height:50px;margin-top:20px;margin-left:47px;background-color: #4A00E0;')
+		div.discord-box
+			h3.discord-title
+				a(target='_blank', href='//goo.gl/forms/DgWYtCaBwOG5ybSB2', style='padding:20px 100px')= L('gmlet')
+	div(style='float: left;margin-top:20px; margin-left: calc(50% - 160px);')
 		div.server-list-box
 			h3.server-list-title
 				a#server-refresh
@@ -55,7 +55,8 @@ block Middle
 				label= L('serverList')
 				label#server-total(style='color: #AAA; font-size: 13px;')
 			div#server-list
-	div(style='float: left; width: calc(100% - 4px); border: 2px solid #CCC; margin-top: 10px; background-color: #EEE;')
+	//-
+		div(style='float: left; width: calc(100% - 4px); border: 2px solid #CCC; margin-top: 10px; background-color: #EEE;')
 		iframe#kkutu-bulletin(width='100%', height='400px', src='/kkutu_bulletin.html')
 	+separator(10)
 

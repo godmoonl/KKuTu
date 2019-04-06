@@ -100,8 +100,28 @@
     color: #000000;
     text-shadow: 0px 0px 2px 0 #F4F4F4;
 }
+.x-100 .users-name::before {
+    content: "[100]";
+    color: #FFA533;
+    text-shadow: 0px 0px 2px #FFA533;
+}
 
-.x-red_name{ color: ; }
+.chat-item > .x-cg::before {
+    content: "[100]";
+    color: #FFA533;
+    text-shadow: 0px 0px 2px #FFA533;
+}
+
+.room-user-title > .x-cg::before {
+    content: "[100]";
+    color: #FFA533;
+    text-shadow: 0px 0px 2px 0 #FFA533;
+}
+.x-do .users-name::before{ content: "[후원자]"; color: #FF0000; text-shadow: 0px 0px 2px #FFE400; }
+.chat-item>.x-do::before{ content: "[후원자]"; color: #FF0000; text-shadow: 0px 0px 2px #FFE400; }
+.room-user-title>.x-do::before{ content: "[후원자]"; color: #FF0000; text-shadow: 0px 0px 2px #FFE400; }
+
+.x-red_name{ color:#FF0000 ; }
 .x-orange_name{ color: #FFA533; }
 .x-green_name{ color: #43C227; }
 .x-blue_name{ color: #2F77D9; }

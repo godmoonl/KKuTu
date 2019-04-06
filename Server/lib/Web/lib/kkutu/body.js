@@ -965,7 +965,11 @@ function userListBar(o, forInvite){
 }
 function addonNickname($R, o){
 	if(o.equip['NIK']) $R.addClass("x-" + o.equip['NIK']);
-	if(o.equip['BDG'] == "b1_gm") $R.addClass("x-gm");
+	if (o.equip['BDG'] == "b1_gm") $R.addClass("x-gm");
+	if (o.equip['BDG'] == "b1_yt") $R.addClass("x-yt");
+	if (o.equip['BDG'] == "b1_tw") $R.addClass("x-tw");
+	if (o.equip['BDG'] == "b1_donate") $R.addClass("x-do");
+	if (o.equip['BDG'] == "100") $R.addClass("x-100");
 }
 function updateRoomList(refresh){
 	var i;

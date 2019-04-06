@@ -21,7 +21,7 @@ body{
 	padding: 0px;
 	margin: 0px;
 	min-width: 360px;
-	font-family: 맑은 고딕, 돋움;
+	font-family: 'Noto Sans CJK KR', 고딕, 돋움;
 }
 a{
 	color: inherit;

@@ -186,7 +186,8 @@
 						.append($("<td>").append(putter("ud-" + item._id + "-server", 't', item.server)))
 						.append($("<td>").append(putter("ud-" + item._id + "-lastLogin", 't', item.lastLogin)))
 						.append($("<td>").append(putter("ud-" + item._id + "-black", 'g', item.black)))
-						.append($("<td>").append(putter("ud-" + item._id + "-friends", 'g', JSON.stringify(item.friends || {}))));
+						.append($("<td>").append(putter("ud-" + item._id + "-friends", 'g', JSON.stringify(item.friends || {}))))
+						.append($("<td>").append(putter("ud-" + item._id + "-nickname", 'g', item.nickname)));
 				});
 			});
 		});
@@ -206,7 +207,8 @@
 					server: $data.get(6).value,
 					lastLogin: $data.get(7).value,
 					black: $data.get(8).value,
-					friends: $data.get(9).value
+					friends: $data.get(9).value,
+					nickname: $data.get(10).value
 				});
 			});
 			$.post("/gwalli/users", {

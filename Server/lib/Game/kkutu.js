@@ -438,8 +438,8 @@ exports.Client = function(socket, profile, sid){
 				}
 			}*/
 			my.exordial = $user.exordial || "";
-			my.nickname = $user.nickname || undefined;
-			if (my.nickname) my.profile.title = my.nickname;
+			my.nickname = $user.nickname || my.profile.title;
+			if ($user.nickname) my.profile.title = my.nickname;
 			my.equip = $user.equip || {};
 			my.box = $user.box || {};
 			my.data = new exports.Data($user.kkutu);

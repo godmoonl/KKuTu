@@ -795,7 +795,8 @@ $(document).ready(function(){
 		});
 	});
 	$stage.dialog.dressOK.on('click', function (e) {
-	    $(e.currentTarget).attr('disabled', true);
+		$(e.currentTarget).attr('disabled', true);
+		alert("프로필 변경후 새로고침을 하시면 적용됩니다");
 	    $.post("/nickname", { data: $("#dress-nickname").val() }, function (res) {
 	        $stage.dialog.dressOK.attr('disabled', false);
 	        if (res.error) return fail(res.error);
