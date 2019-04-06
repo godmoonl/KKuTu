@@ -1,11 +1,7 @@
 # 모두끄투
 
->모두와 함께하는 모두끄투!
-
-[모두끄투 접속하기](https://modutu.tk)
-
 본 레포지토리는 GPL 라이센스를 따르고 있습니다.
-본 레포지토리를 사용하게 되는경우 사이트에 https://github.com/godmoonl/KKuTu 를 기입해주시고 GPL 라이센스에 따라 소스를 공개해야합니다.
+본 레포지토리를 사용하게 되는경우 사이트에 https://github.com/godmoonl/KKuTu 를 기입하고 소스코드를 공개해야합니다.
 
 
 # KKuTu
